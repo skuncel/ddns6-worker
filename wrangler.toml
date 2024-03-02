@@ -1,0 +1,7 @@
+name = "ddns"
+main = "build/worker/shim.mjs"
+compatibility_date = "2023-06-28"
+keep_vars = true
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
