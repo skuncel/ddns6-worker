@@ -2,6 +2,7 @@ name: Deploy to Cloudlfare Workers
 
 on:
   workflow_dispatch:
+  repository_dispatch:
 
 jobs:
   deploy:
