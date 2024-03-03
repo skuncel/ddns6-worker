@@ -53,7 +53,7 @@ fn build_aaaa_record_value(req_params: &HashMap<String, String>, env: &Env) -> R
 
 async fn update_aaaa_record(ip6: Ipv6Addr, env: &Env) -> Result<()> {
     let zone_id = env.var("CLOUDFLARE_ZONE_ID")?.to_string();
-    let dns_record_id = env.var("CLOUDLFARE_RECORD_ID")?.to_string();
+    let dns_record_id = env.var("CLOUDFLARE_RECORD_ID")?.to_string();
     let req_url = format!("https://api.cloudflare.com/client/v4/zones/{}/dns_records/{}", zone_id, dns_record_id);
      
     let api_key = env.secret("CLOUDFLARE_API_KEY")?.to_string();
