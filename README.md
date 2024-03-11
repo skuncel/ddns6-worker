@@ -44,3 +44,14 @@ CLOUDLFARE_RECORD_ID=<your-dns-record-id>
 DDNS_IP6_TOKEN=<your-ip6-token-to-expose>
 ```
 ### Client
+On IP change, the client have to send an request to the worker endpoint with the necessary parameters.
+A request looks like the following:
+```http
+GET /?secret=<secret>&ip6prefix=<ip6prefix> HTTP/1.1
+Host: <worker>
+```
+The parameter have to been set as follows:
+```properties
+secret=<your-worker-side-configured-secret>
+ip6prefix=<ip6-prefix-of-the-target-network>
+```
